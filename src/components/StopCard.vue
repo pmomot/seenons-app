@@ -1,15 +1,15 @@
 <template>
   <div class="flex items-center justify-between mb-2">
     <h3 class="text-xl">{{ stop.name }}</h3>
-    <div>↗️: {{ stop.ordersDrop }}; ↘️: {{ stop.ordersPick }}</div>
+    <div>↗️: {{ stop.ordersDrop?.length }}; ↘️: {{ stop.ordersPick?.length }}</div>
   </div>
   <div class="mb-4">
     {{ stop.address.street }}
     {{ stop.address.house_number }}
     <a
-        :href="stop.address.link"
-        target="_blank"
-        class="underline text-green-500"
+      :href="stop.address.link"
+      target="_blank"
+      class="underline text-green-500 hover:text-green-400"
     >map</a>
   </div>
   <div class="flex items-center justify-between">
@@ -18,7 +18,7 @@
       📞 Call
     </a>
     <Button>
-      <router-link :to="`/stops/${stop.stop_id}`">Show more</router-link>
+      <router-link :to="`/stops/${stop.stop_id}`">🔎 More</router-link>
     </Button>
   </div>
 </template>

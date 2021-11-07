@@ -3,7 +3,7 @@
     <div
       class="px-6 mb-4 flex items-center justify-between text-white font-bold"
     >
-      <div>{{ routeName || "loading..." }}</div>
+      <h1>{{ routeName || "loading..." }}</h1>
       <div>{{ time }}</div>
     </div>
     <FullRoundedContainer>

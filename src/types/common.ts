@@ -53,6 +53,4 @@ export interface CommonStop {
   orders: Order[];
   // client side props
   parsedStatus?: string;
-  ordersPick?: number;
-  ordersDrop?: number;
 }

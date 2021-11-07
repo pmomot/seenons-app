@@ -1,9 +1,11 @@
-import { Id, Timestamp, Status, CommonStop } from "./common";
+import { Id, Timestamp, Status, CommonStop, Order } from "./common";
 
 export interface Stop extends CommonStop {
   stop_id: number;
   comment: string | null;
   eta: Timestamp;
+  ordersPick?: Order[];
+  ordersDrop?: Order[];
 }
 
 interface Depo extends CommonStop {
