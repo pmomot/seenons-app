@@ -12,12 +12,19 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { mapActions } from "vuex";
 import TopNav from "@/components/TopNav.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     TopNav,
+  },
+  methods: {
+    ...mapActions(["getRoute"]),
+  },
+  created() {
+    this.getRoute();
   },
 });
 </script>
