@@ -77,7 +77,10 @@ export default defineComponent({
         stop_id: this.$route.params.stopId,
         orders: [...ordersPick, ...ordersDrop],
       });
-      this.$router.push("/");
+      // This one is a great candidate for the modal as well
+      // but separate route is easier now
+      window.scrollTo(0, 0);
+      this.$router.push("/thank-you");
     },
     cancel() {
       this.$router.push(`/stops/${this.$route.params.stopId}`);
