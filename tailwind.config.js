@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       zIndex: {
-        '-1': '-1',
+        "-1": "-1",
+      },
+      borderRadius: {
+        lg: "20px",
       },
     },
   },

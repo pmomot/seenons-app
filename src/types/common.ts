@@ -29,6 +29,7 @@ export interface Address {
   country: string;
   lat: number;
   lon: number;
+  link?: string;
 }
 
 export interface Order {
@@ -50,4 +51,8 @@ export interface CommonStop {
   time_start: Timestamp;
   time_end: Timestamp;
   orders: Order[];
+  // client side props
+  parsedStatus?: string;
+  ordersPick?: number;
+  ordersDrop?: number;
 }
