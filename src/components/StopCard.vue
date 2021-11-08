@@ -1,7 +1,8 @@
 <template>
-  <div class="flex items-center justify-between mb-2">
-    <h3 class="text-xl">{{ stop.name }}</h3>
-    <div>↗️: {{ stop.ordersDrop?.length }}; ↘️: {{ stop.ordersPick?.length }}</div>
+  <h3 class="text-xl">{{ stop.name }}</h3>
+  <div class="text-sm mb-2">
+    Drop off: {{ stop.ordersDrop?.length }} | Pick up:
+    {{ stop.ordersPick?.length }}
   </div>
   <div class="mb-4">
     {{ stop.address.street }}
@@ -10,7 +11,8 @@
       :href="stop.address.link"
       target="_blank"
       class="underline text-green-500 hover:text-green-400"
-    >map</a>
+      >map</a
+    >
   </div>
   <div class="flex items-center justify-between">
     <div>{{ stop.parsedStatus }}</div>

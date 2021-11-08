@@ -1,5 +1,5 @@
 import { createStore } from "vuex";
-import { Route, Status, Stop, Id, Order } from "@/types";
+import { Route, Status, Stop } from "@/types";
 import { getDriverRoute, ProcessStopParams, processStop } from "@/services";
 import { parseStop } from "./parseStop";
 

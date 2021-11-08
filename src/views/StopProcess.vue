@@ -12,7 +12,10 @@
         v-for="order in stop.ordersDrop"
         :key="order.order_id"
       >
-        <OrderProcessCard :order="order" />
+        <OrderProcessCard
+          :stream_type="order.stream_type"
+          :quantity="order.quantity"
+        />
       </div>
     </div>
     <div v-if="stop.ordersPick?.length" class="mb-4">
@@ -24,7 +27,10 @@
         v-for="order in stop.ordersPick"
         :key="order.order_id"
       >
-        <OrderProcessCard :order="order" />
+        <OrderProcessCard
+          :stream_type="order.stream_type"
+          :quantity="order.quantity"
+        />
       </div>
     </div>
     <div class="flex items-center justify-between">
@@ -54,7 +60,7 @@ export default defineComponent({
     OrderProcessCard,
   },
   computed: {
-    stop(): Stop {
+    stop(): Stop | undefined {
       const routeStopId = this.$route.params.stopId;
       return this.$store.state.stops.find(
         (stop: Stop) => String(stop.stop_id) === String(routeStopId)
@@ -64,12 +70,12 @@ export default defineComponent({
   methods: {
     process() {
       const ordersPick =
-        this.stop.ordersPick?.map(({ quantity, order_id }) => ({
+        this.stop?.ordersPick?.map(({ quantity, order_id }) => ({
           quantity,
           order_id,
         })) || [];
       const ordersDrop =
-        this.stop.ordersDrop?.map(({ quantity, order_id }) => ({
+        this.stop?.ordersDrop?.map(({ quantity, order_id }) => ({
           quantity,
           order_id,
         })) || [];
